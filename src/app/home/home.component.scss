@@ -1,0 +1,38 @@
+.container {
+  height: calc(100% - 64px - 20px);
+  background-color: #1e1e1e;
+  //background: url(../../assets/background.jpg) no-repeat center fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  padding: 10px;
+}
+
+#light-groups {
+  height: 100%;
+}
+
+.light-btn {
+  height: 150px;
+  width: 150px;
+ //margin: 10px;
+}
+
+.light-btn mat-card {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+.light-btn mat-card button {
+  height: 100%;
+  width: 100%;
+}
+
+.light-btn mat-card button mat-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.mat-slider-vertical {
+  min-height: 95%;
+  margin-top: 3px;
+}

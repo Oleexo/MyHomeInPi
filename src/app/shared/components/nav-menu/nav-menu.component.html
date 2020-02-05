@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+    <div>
+      <div>{{inDoor.temperature}}°C</div>
+      <div>{{inDoor.humidity}}%</div>
+    </div>
+    <div>
+      <div class="date">{{now | date:'EEEE, MMMM d, y'}}</div>
+      <div class="time">{{now | date:'hh:mm'}}</div>
+    </div>
+    <div *ngIf="outDoor">
+      <div class="outdoor-values">
+        {{outDoor.temperature}}°C - {{outDoor.humidity}}%
+      </div>
+      <div class="outdoor-description">
+        {{outDoor.description}}
+      </div>
+    </div>
+    <div *ngIf="!outDoor">
+      Getting weather...
+    </div>
+  </div>
+</mat-toolbar>

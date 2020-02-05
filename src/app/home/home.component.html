@@ -1,0 +1,25 @@
+<div class="container">
+  <div fxLayout="row" style="height: 100%;">
+    <div fxLayout="column wrap" fxLayoutAlign="space-around center" id="light-groups">
+      <div *ngFor="let group of hueGroups" class="light-btn">
+        <mat-card [ngStyle]="{'background-color': group.action.hexColor}">
+          <div fxLayout="row" style="height: 100%;">
+            <div style="height: 100%; width: calc(100% - 48px);">
+              <button mat-button (click)="toggleLightGroup(group)">
+                <div class="title">{{group.name}}</div>
+                <mat-icon svgIcon="lightbulb-outline" *ngIf="!group.state.all_on || !group.state.any_on"></mat-icon>
+                <mat-icon svgIcon="lightbulb-on-outline" *ngIf="group.state.all_on || group.state.any_on"></mat-icon>
+              </button>
+            </div>
+            <div style="height: 100%;">
+              <mat-slider vertical min="0" max="254" step="1" [(ngModel)]="group.action.bri" (change)="onBrightnessChange($event, group)"></mat-slider>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+    <div>
+      MyHomeInPi
+    </div>
+  </div>
+</div>
